@@ -105,6 +105,7 @@ In essence, what really happens is that we assign task-adaptive weights to each 
 
 <details>
   <summary> RetinaNet </summary>
+  
   * Warm up epoch: 10
   * Batch size: 16
   * Optimizer: AdamW
@@ -117,6 +118,7 @@ In essence, what really happens is that we assign task-adaptive weights to each 
 
 <details>
   <summary> YOLOX </summary>
+  
   * Warm up epoch: 5
   * Batch size: 32
   * Optimizer: SGD with momentum of 0.9
