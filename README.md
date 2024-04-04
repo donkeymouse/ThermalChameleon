@@ -95,18 +95,58 @@ In essence, what really happens is that we assign task-adaptive weights to each 
 
 ## Training Details
 
-<details>
-  <summary> Object detection </summary>
-  
-  <details>
-  <summary> RetinaNet </summary>
-  
-    * item1
-    * itme2
+### Basic setting
 
-  </details>
+* All settings use ResNet50 as backbones unless specified
+* All models were trained using Nvidia RTX 4090 / RTX-A6000 for YOLOX
+* All models were trained for 500 epochs with weights being saved for each epoch. We took the best epoch based on the validation set. 
+
+### Object detection 
+
+<details>
+  <summary> RetinaNet </summary>
+  * Warm up epoch: 10
+  * Batch size: 16
+  * Optimizer: AdamW
+  * Base lr: 1.5 \times 10^{-4}
+  * Scheduler: Cosine annealing
+  * Data augmentation: Random horizontal flip
+  * Pretraining?: No (Trained from scratch)
 
 </details>
+
+<details>
+  <summary> YOLOX </summary>
+  * Warm up epoch: 5
+  * Batch size: 32
+  * Optimizer: SGD with momentum of 0.9
+  * Weight decay: 0.05
+  * Base lr: 1.5625 \times 10^{-4}
+  * Scheduler: Cosine annealing
+  * Data augmentation: Random horizontal flip, Random mosaic, Random mixup
+  * Pretraining?: No (Trained from scratch)
+  Pretty much all settings are identical to original YOLO-X implementations.
+
+</details>
+
+<details>
+  <summary> Sparse-RCNN </summary>
+
+  Implemented on MMDetection
+  
+  * Warm up iterations: 1000 iterations
+  * Batch size: 16
+  * Optimizer: AdamW 
+  * Weight decay: 0.0001
+  * Base lr: 2.5 \times 10^{-4}
+  * Scheduler: Cosine annealing
+  * Data augmentation: Random horizontal flip, Random mosaic, Random mixup
+  * Pretraining?: Yes (ImageNet pretraining). For Thermal embedding, we averaged out the 3 channel weights and copied it to all channels for the first conv layer.
+
+</details>
+
+
+
 
 
 ## Usage
