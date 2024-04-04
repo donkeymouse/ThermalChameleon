@@ -2,30 +2,26 @@
 
 Official Repository for "Thermal Chameleon Net: Task-Adaptive Tone-mapping for Thermal-Infrared images", Underreview
 
-![thermal_cameleon](https://github.com/ThermalCameleon/ThermalCameleonNet/assets/150974352/e82e98e8-63f7-477b-bd0d-35efc02c6481)
+![tc](https://github.com/donkeymouse/ThermalChameleon/assets/58677731/fc46250b-e4df-41c3-8f1b-d69e8a1269f7)
 
 Above is a picture of thermal cameleon that we've made using Dall-E.
 
 TLDR: We propose a new task-adaptive learnable tone-mapping network for thermal infrared images from 14-bit (RAW) thermal infrared images. 
 
-### Why bother using 14-bit thermal infrared images??
+### Abstract
 
-Thermal images we usually see from datasets look something similar to the image below. 
+Thermal Infrared (TIR) imaging offers robust perception for navigating challenging outdoor environments. However, it encounters significant challenges, notably in texture and contrast, stemming from its typical 14/16-bit format. Traditional rescaling methods, aimed primarily at geometric tasks like depth estimation, lack flexibility for semantic downstream tasks and require extensive environmental knowledge for image standardization. To bridge this gap, we present the Thermal Chameleon Network (TCNet), an innovative approach to task-adaptive tone-mapping for RAW 14-bit TIR images. TCNet introduces multichannel thermal embedding, eliminating the need for heuristic image rescaling, and incorporates adaptive channel compression to streamline the embedding into a 3-channel output. This advancement facilitates task-specific tone-mapping and ensures TCNet's modularity with diverse network architectures and applications. Demonstrating minimal computational increase and superior adaptability to limited training data, TCNet excels in object detection, setting new horizons for improved semantic task performance in TIR imaging.
 
+Too long to read? Here's a TL;DR
 
-- Some common strategies to counteract this it to use different 14-bit to 8-bit rescaling methods like below but that's still using quantized 8-bit images. 
-![main_figure_overview](https://github.com/ThermalCameleon/ThermalCameleonNet/assets/150974352/60a02d15-0f65-44a6-a236-71af77b23a44)
-
-In our work, we decided to employ 14-bit thermal images directly as inputs to neural networks to get the best out of the original data!
-![detection_results_snu](https://github.com/ThermalCameleon/ThermalCameleonNet/assets/150974352/5ea2f646-87f4-4c71-8a54-f9aaa306b324)
-
-The figure above shows the perceived image from the feature map prior to the object detection input. Essentially it is what image the object detection networks like to see in thermal image-based object detection. 
+**Don't spend time on tone-mapping thermal images that would work well for all tasks, instead let the network do it for you, optimized for each task!**
 
 ### Overview of the Thermal Cameleon Network
 
 <div align="center">
   
-![overview_proposed](https://github.com/ThermalCameleon/ThermalCameleonNet/assets/150974352/62069c32-1366-4bbb-a7ee-2fd1347b995e)
+![method_overview](https://github.com/donkeymouse/ThermalChameleon/assets/58677731/34bf3528-32b4-4282-9039-fbffdbc56274)
+
 
 </div>
 
@@ -36,25 +32,72 @@ Our method is divided into two stages:
 - Multichannel thermal embedding: Essentially a tool to represent each absolute temperature value (in Celsius) to a set feature vectors. 
 - Adaptive channel compression network: Employing lots of multichannel embeddings always don't work and it even incurs high computational cost. More importantly, we can't use transfer learning this way as they are optimized for 3 channel inputs. This essentially enables all those operations by compressing only valid features for object detection in three channel representations. 
 
+In essence, what really happens is that we assign task-adaptive weights to each thermal embedding, optimized and controlled by the loss functions of the downstream task.
+
+![task_adaptive_tonemapv2](https://github.com/donkeymouse/ThermalChameleon/assets/58677731/e333fe24-d0ad-410e-ad48-0d2cbea84663)
+
+
 
 # Results
 ### Quantitative Results on object detection
 
+<details>
+  <summary>FLIR-ADAS Dataset</summary>
+  
 <div align="center">
   
-![table](https://github.com/ThermalCameleon/ThermalCameleonNet/assets/150974352/4c543b54-7e92-4b11-b449-62428c20c6f3)
+![obj_det_flir](https://github.com/donkeymouse/ThermalChameleon/assets/58677731/d1b1e5ae-2d5d-42bf-9bfd-3ce5881d0ecb)
+
 
 </div>
 
+</details>
 
-### Qualitative on object detection across multiple datasets
-
+<details>
+  <summary>Zero-shot detection on various public dataset</summary>
+  
 <div align="center">
   
-![comparisons](https://github.com/ThermalCameleon/ThermalCameleonNet/assets/150974352/966a72f6-f65d-421b-9139-2cf6d19d55d7)
+![obj_det_unseen](https://github.com/donkeymouse/ThermalChameleon/assets/58677731/423ac135-4c01-45c4-8ded-62aaf65f2dae)
 
 </div>
 
-Cyan refers to 'car' class and Yello refers to 'person' class. 
+</details>
 
-## Code will become available after the end of blind review period. 
+
+### Qualitative on depth estimation
+
+
+<details>
+  <summary> VIVID Dataset </summary>
+  
+<div align="center">
+  
+![VIVID](https://github.com/donkeymouse/ThermalChameleon/assets/58677731/f2012c3c-27aa-45d1-88dd-ea302230507b)
+
+
+</div>
+
+</details>
+
+<details>
+  <summary>Zero-shot detection on FLIR-ADAS/STheReO </summary>
+  
+<div align="center">
+  
+![unseen_depth](https://github.com/donkeymouse/ThermalChameleon/assets/58677731/66b98431-e098-4ae9-ba02-136ec8d18192)
+
+
+</div>
+
+</details>
+
+
+## Training Details
+
+
+
+
+### Usage
+
+## Will be announced after review period
