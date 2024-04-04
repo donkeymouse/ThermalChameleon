@@ -123,7 +123,7 @@ In essence, what really happens is that we assign task-adaptive weights to each 
   * Batch size: 32
   * Optimizer: SGD with momentum of 0.9
   * Weight decay: 0.05
-  * Base lr: $$ 1.5625 \times 10^{-4} $$
+  * Base lr: $1.5625 \times 10^{-4}$
   * Scheduler: Cosine annealing
   * Data augmentation: Random horizontal flip, Random mosaic, Random mixup
   * Pretraining?: No (Trained from scratch)
@@ -140,7 +140,7 @@ In essence, what really happens is that we assign task-adaptive weights to each 
   * Batch size: 16
   * Optimizer: AdamW 
   * Weight decay: 0.0001
-  * Base lr: $$ 2.5 \times 10^{-4} $$
+  * Base lr: $2.5 \times 10^{-4}$
   * Scheduler: Cosine annealing
   * Data augmentation: Random horizontal flip, Random mosaic, Random mixup
   * Pretraining?: Yes (ImageNet pretraining). For Thermal embedding, we averaged out the 3 channel weights and copied it to all channels for the first conv layer.
@@ -155,7 +155,7 @@ In essence, what really happens is that we assign task-adaptive weights to each 
   
   * Batch size: 4
   * Optimizer: Adam
-  * Base lr: $$ 1.5 \times 10^{-4} $$
+  * Base lr: $1.5 \times 10^{-4}$
   * Scheduler: Cosine annealing
   * Data augmentation: Random horizontal flip/Random crop
   * Pretraining?: Yes (ImageNet Pretraining)
