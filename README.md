@@ -151,7 +151,7 @@ In essence, what really happens is that we assign task-adaptive weights to each 
 ### Depth estimation 
 
 <details>
-  <summary> RetinaNet </summary>
+  <summary> Monodepth-Thermal </summary>
   
   * Batch size: 4
   * Optimizer: Adam
@@ -170,3 +170,4 @@ In essence, what really happens is that we assign task-adaptive weights to each 
 ## Usage
 
 ### Will be announced after review period
+
