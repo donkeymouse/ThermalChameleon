@@ -1,20 +1,17 @@
-# Thermal Chameleon Net: Adapting 14-bit RAW Thermal Infrared Images for Object Detection
+# Thermal Chameleon Net: Task-Adaptive Tone-mapping for Thermal-Infrared images
+
+Official Repository for "Thermal Chameleon Net: Task-Adaptive Tone-mapping for Thermal-Infrared images", Underreview
 
 ![thermal_cameleon](https://github.com/ThermalCameleon/ThermalCameleonNet/assets/150974352/e82e98e8-63f7-477b-bd0d-35efc02c6481)
 
 Above is a picture of thermal cameleon that we've made using Dall-E.
 
-TLDR: We propose a new task-adaptive learnable preprocessing network for thermal object detection from 14-bit (raw) thermal infrared images. 
+TLDR: We propose a new task-adaptive learnable tone-mapping network for thermal infrared images from 14-bit (RAW) thermal infrared images. 
 
-### Why bother using 14-bit thermal infrared images for object detection??
+### Why bother using 14-bit thermal infrared images??
 
 Thermal images we usually see from datasets look something similar to the image below. 
-![problem_statement](https://github.com/ThermalCameleon/ThermalCameleonNet/assets/150974352/7890c568-858a-468e-9d06-860f0c372c3a)
 
-As you can see, it suffers two problems:
-
-- Thermal Crossovers: A natural phenemenon that occurs when the temperature of an object (e.g. a person) becomes identical with that of the background.
-- Thermal Ghosting: This has been known problem in thermal imaging where local textures and details are lost because of the saturation in pixels that occur from min-max normalizations.
 
 - Some common strategies to counteract this it to use different 14-bit to 8-bit rescaling methods like below but that's still using quantized 8-bit images. 
 ![main_figure_overview](https://github.com/ThermalCameleon/ThermalCameleonNet/assets/150974352/60a02d15-0f65-44a6-a236-71af77b23a44)
