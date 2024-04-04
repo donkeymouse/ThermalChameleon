@@ -1,4 +1,4 @@
-# Thermal Chameleon Net: Task-Adaptive Tone-mapping for Thermal-Infrared images
+## Thermal Chameleon Net: Task-Adaptive Tone-mapping for Thermal-Infrared images
 
 Official Repository for "Thermal Chameleon Net: Task-Adaptive Tone-mapping for Thermal-Infrared images", Underreview
 
@@ -95,9 +95,20 @@ In essence, what really happens is that we assign task-adaptive weights to each 
 
 ## Training Details
 
+<details>
+  <summary> Object detection </summary>
+  
+  <details>
+  <summary> RetinaNet </summary>
+  
+    * item1
+    * itme2
+
+  </details>
+
+</details>
 
 
+## Usage
 
-### Usage
-
-## Will be announced after review period
+### Will be announced after review period
