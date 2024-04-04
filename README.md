@@ -109,7 +109,7 @@ In essence, what really happens is that we assign task-adaptive weights to each 
   * Warm up epoch: 10
   * Batch size: 16
   * Optimizer: AdamW
-  * Base lr: $$ 1.5 \times 10^{-4} $$
+  * Base lr: $1.5 \times 10^{-4}$
   * Scheduler: Cosine annealing
   * Data augmentation: Random horizontal flip
   * Pretraining?: No (Trained from scratch)
