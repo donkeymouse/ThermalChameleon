@@ -148,6 +148,22 @@ In essence, what really happens is that we assign task-adaptive weights to each 
 </details>
 
 
+### Depth estimation 
+
+<details>
+  <summary> RetinaNet </summary>
+  
+  * Batch size: 4
+  * Optimizer: Adam
+  * Base lr: 1.5 \times 10^{-4}
+  * Scheduler: Cosine annealing
+  * Data augmentation: Random horizontal flip/Random crop
+  * Pretraining?: Yes (ImageNet Pretraining)
+
+  
+  Followed all protocols and most settings used in this repo: https://github.com/UkcheolShin/ThermalMonoDepth
+
+</details>
 
 
 
