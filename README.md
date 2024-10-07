@@ -1,6 +1,14 @@
-## Thermal Chameleon Net: Task-Adaptive Tone-mapping for Thermal-Infrared images
+## Thermal Chameleon: Task-Adaptive Tone-mapping for Radiometric Thermal-Infrared images
 
 Official Repository for "Thermal Chameleon Net: Task-Adaptive Tone-mapping for Thermal-Infrared images", 
+
+<div align="left">  
+  <a href="https://scholar.google.com/citations?user=u6VDnlgAAAAJ&hl=ko&oi=ao">Dong-Guw Lee</a>,  
+  <a href="https://scholar.google.com/citations?hl=ko&user=vW2JtFAAAAAJ">Jeongyun Kim</a>,
+  <a href="https://scholar.google.com/citations?user=W5MOKWIAAAAJ&hl=ko&oi=ao">Younggun Cho</a>,  
+  <a href="https://ayoungk.github.io/">Ayoung Kim</a>
+</div>
+
 
 A contributed paper to Robotics and Automation Letters (RA-L). 
 
