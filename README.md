@@ -6,19 +6,19 @@ A contributed paper to Robotics and Automation Letters (RA-L).
 
 ![tc](https://github.com/donkeymouse/ThermalChameleon/assets/58677731/fc46250b-e4df-41c3-8f1b-d69e8a1269f7)
 
-Above is a picture of thermal cameleon that we've made using Dall-E.
+Above is a picture of thermal chameleon that we've made using Dall-E.
 
 TLDR: We propose a new task-adaptive learnable tone-mapping network for thermal infrared images from 14-bit (RAW) thermal infrared images. 
 
 ### Abstract
 
-Thermal Infrared (TIR) imaging offers robust perception for navigating challenging outdoor environments. However, it encounters significant challenges, notably in texture and contrast, stemming from its typical 14/16-bit format. Traditional rescaling methods, aimed primarily at geometric tasks like depth estimation, lack flexibility for semantic downstream tasks and require extensive environmental knowledge for image standardization. To bridge this gap, we present the Thermal Chameleon Network (TCNet), an innovative approach to task-adaptive tone-mapping for RAW 14-bit TIR images. TCNet introduces multichannel thermal embedding, eliminating the need for heuristic image rescaling, and incorporates adaptive channel compression to streamline the embedding into a 3-channel output. This advancement facilitates task-specific tone-mapping and ensures TCNet's modularity with diverse network architectures and applications. Demonstrating minimal computational increase and superior adaptability to limited training data, TCNet excels in object detection, setting new horizons for improved semantic task performance in TIR imaging.
+Thermal Infrared (TIR) imaging provides robust perception for navigating in challenging outdoor environments but faces issues with poor texture and low image contrast due to its 14/16-bit format. Conventional methods utilize various tone-mapping methods to enhance contrast and photometric consistency of TIR images, however, the choice of tone-mapping is largely dependent on knowing the task and temperature dependent priors to work well. In this paper, we present Thermal Chameleon Network (TCNet), a task-adaptive tone- mapping approach for RAW 14-bit TIR images. Given the same image, TCNet tone-maps different representations of TIR images tailored for each specific task, eliminating the heuristic image rescaling preprocessing and reliance on the extensive prior knowledge of the scene temperature or task-specific characteris- tics. TCNet exhibits improved generalization performance across object detection and monocular depth estimation, with minimal computational overhead and modular integration to existing architectures for various tasks. 
 
 Too long to read? Here's a TL;DR
 
 **Don't spend time on tone-mapping thermal images that would work well for all tasks, instead let the network do it for you, optimized for each task!**
 
-### Overview of the Thermal Cameleon Network
+### Overview of Thermal Chameleon
 
 <div align="center">
   
@@ -173,3 +173,22 @@ In essence, what really happens is that we assign task-adaptive weights to each 
 
 ### Will be announced after review period
 
+
+## Citation
+
+Please consider citing the paper as:
+```
+@ARTICLE {dglee-2024-tcnet,
+    AUTHOR = { Dong-Guw Lee and Jeongyun Kim and Younggun Cho and Ayoung Kim },
+    TITLE = { Thermal Chameleon: Task-Adaptive Tone-mapping for Radiometric Thermal-Infrared images },
+    JOURNAL = {IEEE Robotics and Automation Letters (RA-L) },
+    YEAR = { 2024 },
+}
+
+```  
+
+## Contact
+If you have any *urgent* questions or issues that need to be resolved, please contact me by email. 
+```
+donkeymouse@snu.ac.kr
+```
